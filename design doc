@@ -1,0 +1,89 @@
+Design a modern SaaS-style personal portfolio website UI for a professional Full Stack MERN Developer.
+
+Brand Name: Ravinder Mauriya (short: ravinder.dev)
+
+Goal:
+The portfolio should look like a premium SaaS product website, not a student portfolio. It must reflect expertise in UI/UX, responsiveness, and modern frontend architecture.
+
+Design Style:
+- Clean, minimal, SaaS-inspired
+- Dark theme by default
+- Smooth gradients (blue to purple)
+- Glassmorphism effects (subtle)
+- Modern typography (Inter)
+- Soft shadows, rounded corners
+
+Color Palette:
+- Background: #0B0F19
+- Card: #111827
+- Primary: #3B82F6
+- Secondary: #8B5CF6
+- Accent: #22C55E
+- Text: #E5E7EB
+
+Sections to design:
+
+1. Hero Section:
+- Full screen height
+- Name: Ravinder Mauriya
+- Tagline: Full Stack MERN Developer building scalable, end-to-end web applications with modern UI/UX.
+- Subtext: From idea to production — I handle everything.
+- CTA buttons: View Projects, Download Resume, Hire Me
+- Add subtle background gradient animation
+
+2. About Section:
+- Professional summary
+- Focus on MERN stack, UI/UX, real-world project experience
+- Clean two-column layout
+
+3. Skills Section:
+- Grid layout with categories:
+  Frontend, Backend, Database, Tools
+- Include icons and hover effects
+
+4. Projects Section (IMPORTANT):
+- Grid layout (2-3 columns)
+- Highlight one featured project
+
+Featured Project:
+- NexCart (Full Stack Ecommerce)
+- Include: image preview, description, tech stack badges, features list
+
+Other Project:
+- SoleStyle (Frontend UI project)
+
+Each project card must include:
+- Image preview
+- Title
+- Short description
+- Tech stack badges
+- Buttons (Live + GitHub)
+
+5. Experience Section:
+- Training cards
+- Clean timeline or card layout
+
+6. Services Section:
+- Web Development
+- Frontend Development
+- UI/UX Design
+- E-commerce Solutions
+
+7. Contact Section:
+- Contact form UI
+- Social icons
+- “Available for freelance & full-time work”
+
+8. Footer:
+- Minimal, clean
+- Include links and branding
+
+Design Requirements:
+- Fully responsive (mobile-first)
+- Proper spacing and visual hierarchy
+- Consistent design system
+- Avoid clutter and overdesign
+
+Output:
+- Generate high-fidelity UI design
+- Provide React + Tailwind CSS compatible structure if possible

@@ -1,0 +1,81 @@
+You are a senior React developer.
+
+Task:
+Convert the provided UI design (from Stitch AI) into a production-ready React portfolio website using Vite, Tailwind CSS v4, and Framer Motion.
+
+Project Requirements:
+
+Tech Stack:
+- React (Vite)
+- Tailwind CSS v4
+- Framer Motion
+- React Router
+
+Architecture:
+- Clean folder structure:
+  src/
+    components/
+    sections/
+    pages/
+    assets/
+    context/
+
+- Avoid unnecessary abstraction
+
+UI Requirements:
+- Pixel-perfect implementation of design
+- Dark theme default
+- Responsive on all devices
+- Smooth animations (medium level)
+
+Sections to implement:
+- Navbar (sticky, responsive)
+- Hero
+- About
+- Skills
+- Projects (with reusable ProjectCard)
+- Experience
+- Services
+- Contact
+
+Component Rules:
+- Reusable components (Button, Card, SectionTitle)
+- Clean and readable code
+- Proper naming conventions
+
+Animations:
+- Use Framer Motion:
+  - Fade-in sections
+  - Slide-up cards
+  - Hover effects
+
+Projects Data:
+
+1. NexCart:
+- Full Stack MERN ecommerce app
+- Features:
+  - Authentication (JWT)
+  - Product listing
+  - Cart & checkout
+  - Razorpay integration
+  - Admin panel
+
+2. SoleStyle:
+- Frontend ecommerce UI
+- Features:
+  - Product listing
+  - Filtering UI
+  - Responsive design
+
+SEO:
+- Add meta title, description, keywords
+- Use semantic HTML
+
+Performance:
+- Lazy load images
+- Optimize components
+
+Output:
+- Full working React code
+- Separate files for each component
+- Clean and production-ready

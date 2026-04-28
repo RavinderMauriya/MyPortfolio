@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="rLetterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0E7FF"/>
+      <stop offset="100%" stop-color="#C7D2FE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="1" y="1" width="38" height="38" rx="10" ry="10" fill="#0B0F19" stroke="url(#logoGrad)" stroke-width="1.5"/>
+
+  <!-- Left bracket < -->
+  <path d="M 7 20 L 12.5 14 L 12.5 15.8 L 8.8 20 L 12.5 24.2 L 12.5 26 Z" 
+        fill="url(#logoGrad)" opacity="0.9"/>
+
+  <!-- Right bracket > -->
+  <path d="M 33 20 L 27.5 14 L 27.5 15.8 L 31.2 20 L 27.5 24.2 L 27.5 26 Z" 
+        fill="url(#logoGrad)" opacity="0.9"/>
+
+  <!-- Forward slash / -->
+  <rect x="24.5" y="13" width="1.5" height="14" rx="0.75" 
+        fill="url(#logoGrad)" opacity="0.6" 
+        transform="rotate(18, 25.25, 20)"/>
+
+  <!-- R letter - compact and bold -->
+  <g>
+    <!-- R vertical stroke -->
+    <rect x="14.5" y="11" width="3.2" height="18" rx="0.5" fill="url(#rLetterGrad)"/>
+    
+    <!-- R bowl (top curve) -->
+    <path d="M 16.1 11 L 22 11 
+             C 26 11 26 18.5 22 18.5 
+             L 16.1 18.5 L 16.1 14.5 
+             L 21.5 14.5 C 23 14.5 23 15 21.5 15 
+             L 17.7 14 Z" 
+          fill="url(#rLetterGrad)"/>
+    
+    <!-- R bowl - cleaner approach -->
+    <path d="M 17.7 11 L 22 11 C 25.5 11 25.5 18.5 22 18.5 L 17.7 18.5 L 17.7 15.5 L 21.5 15.5 C 22.8 15.5 22.8 14 21.5 14 L 17.7 14 Z" 
+          fill="url(#rLetterGrad)"/>
+    
+    <!-- R leg (diagonal) -->
+    <path d="M 20 18.5 L 25 29 L 22 29 L 17.5 19.8 Z" 
+          fill="url(#rLetterGrad)"/>
+  </g>
+
+  <!-- Cursor blink -->
+  <rect x="26" y="26" width="1.8" height="3.5" rx="0.3" fill="#22C55E" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+</svg>
