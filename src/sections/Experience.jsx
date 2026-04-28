@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap } from 'lucide-react';
 
@@ -6,14 +5,14 @@ const experienceData = [
   {
     title: 'Full Stack Web Development Training',
     company: 'Tech Academy',
-    date: '2023 - Present',
+    date: '2025 - Present',
     description: 'Intensive training covering the complete MERN stack. Developed multiple production-ready applications including comprehensive e-commerce platforms and interactive dashboards. Focus on clean architecture, REST APIs, and state management.',
     icon: GraduationCap
   },
   {
     title: 'Frontend UI/UX Mastery',
     company: 'Self-Taught & Bootcamps',
-    date: '2022 - 2023',
+    date: '2024 - 2025',
     description: 'Mastered modern CSS frameworks, responsive design principles, and JavaScript fundamentals. Built pixel-perfect UI clones and custom design systems using Tailwind CSS and React.',
     icon: Briefcase
   }
