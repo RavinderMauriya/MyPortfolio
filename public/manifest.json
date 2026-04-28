@@ -1,0 +1,20 @@
+{
+  "name": "Ravinder Mauriya - Full Stack MERN Developer",
+  "short_name": "ravinder.dev",
+  "description": "Portfolio of Ravinder Mauriya - Full Stack MERN Developer specializing in React, Node.js, Express, and MongoDB.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

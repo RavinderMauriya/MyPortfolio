@@ -83,7 +83,12 @@ const Navbar = () => {
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
 
-            <button onClick={() => setIsOpen(!isOpen)} className="text-text-main hover:text-primary focus:outline-none">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-text-main hover:text-primary focus:outline-none"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
