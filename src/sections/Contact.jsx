@@ -1,10 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Email send failed:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -41,7 +82,7 @@ const Contact = () => {
           >
             <form
               className="space-y-5 sm:space-y-6"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               {/* Name + Email */}
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
@@ -51,7 +92,11 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Your Name"
+                    required
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-background rounded-lg border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base"
                   />
                 </div>
@@ -62,7 +107,11 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="email@example.com"
+                    required
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-background rounded-lg border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base"
                   />
                 </div>
@@ -75,7 +124,11 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Any Inquiry"
+                  required
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-background rounded-lg border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm sm:text-base"
                 />
               </div>
@@ -86,18 +139,45 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={5}
                   placeholder="Write your message here"
+                  required
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-background rounded-lg border border-white/10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary resize-none text-sm sm:text-base"
                 />
               </div>
 
+              {/* Status Messages */}
+              {submitStatus === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 text-green-400 text-sm"
+                >
+                  <CheckCircle size={16} />
+                  Message sent successfully!
+                </motion.div>
+              )}
+              {submitStatus === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 text-red-400 text-sm"
+                >
+                  <AlertCircle size={16} />
+                  Failed to send message. Please try again.
+                </motion.div>
+              )}
+
               {/* Button */}
               <button
                 type="submit"
-                className="w-full py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-primary to-secondary text-white text-sm sm:text-base font-medium rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition"
+                disabled={isSubmitting}
+                className="w-full py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-primary to-secondary text-white text-sm sm:text-base font-medium rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send size={18} />
               </button>
             </form>
