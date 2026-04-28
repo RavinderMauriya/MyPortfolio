@@ -103,6 +103,7 @@ const Projects = () => {
                     href={project.liveUrl}
                     className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors text-sm"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <ExternalLink size={16} />
                     Live Demo
@@ -111,6 +112,7 @@ const Projects = () => {
                     href={project.githubUrl}
                     className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-black/5 dark:bg-white/5 text-text-main font-medium hover:bg-black/10 dark:hover:bg-white/10 transition-colors border border-black/10 dark:border-white/10 text-sm"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaGithub size={16} />
                     Code
