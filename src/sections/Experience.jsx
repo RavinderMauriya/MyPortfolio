@@ -44,14 +44,14 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="mb-12 relative pl-8 md:pl-12"
             >
-              <div className="absolute -left-[17px] md:-left-[21px] top-1 bg-card border-2 border-primary w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-primary shadow-[0_0_10px_rgba(59,130,246,0.3)]">
+              <div className="absolute -left-[17px] md:-left-[21px] top-1 bg-card border-2 border-primary w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-primary shadow-[0_0_10px_rgba(59,130,246,0.3)]" aria-hidden="true">
                 <item.icon size={18} />
               </div>
               
               <div className="bg-card p-6 md:p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-colors">
                 <span className="text-sm font-medium text-secondary mb-2 block">{item.date}</span>
                 <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                <h4 className="text-text-main/60 font-medium mb-4">{item.company}</h4>
+                <h4 className="text-text-main/80 font-medium mb-4">{item.company}</h4>
                 <p className="text-text-main/80 leading-relaxed text-sm md:text-base">
                   {item.description}
                 </p>

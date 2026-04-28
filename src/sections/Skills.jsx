@@ -50,8 +50,8 @@ const Skills = () => {
               </h3>
               <ul className="space-y-3">
                 {group.skills.map((skill) => (
-                  <li key={skill} className="flex items-center text-text-main/80 group-hover:text-text-main transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent mr-3" />
+                  <li key={skill} className="flex items-center text-text-main/90 group-hover:text-text-main transition-colors">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mr-3" aria-hidden="true" />
                     {skill}
                   </li>
                 ))}

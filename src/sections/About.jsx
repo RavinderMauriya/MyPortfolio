@@ -46,9 +46,9 @@ const About = () => {
               { icon: Code2, title: 'Clean Code', desc: 'Best Practices' },
             ].map((item, index) => (
               <div key={index} className="p-6 rounded-2xl bg-card border border-white/5 hover:border-primary/30 transition-colors">
-                <item.icon className="text-primary mb-4" size={32} />
+                <item.icon className="text-primary mb-4" size={32} aria-hidden="true" />
                 <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                <p className="text-text-main/60 text-sm">{item.desc}</p>
+                <p className="text-text-main/80 text-sm">{item.desc}</p>
               </div>
             ))}
           </motion.div>

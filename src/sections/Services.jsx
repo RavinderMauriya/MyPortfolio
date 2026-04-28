@@ -53,11 +53,11 @@ const Services = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="p-8 bg-card rounded-2xl border border-white/5 hover:bg-card/80 hover:border-secondary/30 transition-all group"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300" aria-hidden="true">
                 <service.icon size={28} />
               </div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-text-main/70 text-sm leading-relaxed">
+              <p className="text-text-main/80 text-sm leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

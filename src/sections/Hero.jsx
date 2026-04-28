@@ -55,14 +55,14 @@ const Hero = () => {
         >
           <a href="#projects" className="group px-8 py-3.5 rounded-lg bg-primary text-white font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
             View Projects
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </a>
           <a href="/resume.pdf" target="_blank" className="px-8 py-3.5 rounded-lg bg-card border border-white/10 text-text-main font-medium flex items-center justify-center gap-2 hover:bg-white/5 transition-all">
-            <Download size={18} />
+            <Download size={18} aria-hidden="true" />
             Download Resume
           </a>
           <a href="#contact" className="px-8 py-3.5 rounded-lg bg-transparent border border-white/10 text-text-main font-medium flex items-center justify-center gap-2 hover:border-primary/50 hover:text-primary transition-all">
-            <Mail size={18} />
+            <Mail size={18} aria-hidden="true" />
             Hire Me
           </a>
         </motion.div>

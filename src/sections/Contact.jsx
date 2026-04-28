@@ -211,11 +211,11 @@ const Contact = () => {
 
               {/* Email */}
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-full flex items-center justify-center text-primary shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-full flex items-center justify-center text-primary shrink-0" aria-hidden="true">
                   <Mail size={18} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs sm:text-sm text-text-main/60">Email</p>
+                  <p className="text-xs sm:text-sm text-text-main/80">Email</p>
                   <p className="font-medium text-sm sm:text-base break-all">
                     ravindermauriya6290@gmail.com
                   </p>
@@ -224,11 +224,11 @@ const Contact = () => {
 
               {/* Location */}
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-full flex items-center justify-center text-primary shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/5 rounded-full flex items-center justify-center text-primary shrink-0" aria-hidden="true">
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm text-text-main/60">
+                  <p className="text-xs sm:text-sm text-text-main/80">
                     Location
                   </p>
                   <p className="font-medium text-sm sm:text-base">India</p>

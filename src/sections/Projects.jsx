@@ -83,7 +83,7 @@ const Projects = () => {
                 className={`p-8 flex flex-col justify-center ${project.featured ? "lg:w-1/2" : ""}`}
               >
                 <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-text-main/70 mb-6 leading-relaxed">
+                <p className="text-text-main/80 mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -91,7 +91,7 @@ const Projects = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-black/5 dark:bg-white/5 text-text-main/80 border border-black/10 dark:border-white/10"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-black/5 dark:bg-white/5 text-text-main/90 border border-black/10 dark:border-white/10"
                     >
                       {tag}
                     </span>
@@ -105,7 +105,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={16} aria-hidden="true" />
                     Live Demo
                   </a>
                   <a
@@ -114,7 +114,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaGithub size={16} />
+                    <FaGithub size={16} aria-hidden="true" />
                     Code
                   </a>
                 </div>
