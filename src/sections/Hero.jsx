@@ -1,12 +1,31 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Mail } from 'lucide-react';
+import Antigravity from '../components/Antigravity';
 
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[128px] pointer-events-none" />
+      {/* Antigravity 3D Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <Antigravity
+          count={150}
+          magnetRadius={5}
+          ringRadius={6}
+          waveSpeed={0.15}
+          waveAmplitude={0.3}
+          particleSize={0.7}
+          lerpSpeed={0.02}
+          autoAnimate={true}
+          particleVariance={0.3}
+          rotationSpeed={0.01}
+          depthFactor={0.8}
+          pulseSpeed={1}
+          particleShape="capsule"
+          fieldStrength={20}
+        />
+      </div>
+      {/* Mobile overlay to reduce distraction */}
+      <div className="absolute inset-0 bg-background/40 sm:bg-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
