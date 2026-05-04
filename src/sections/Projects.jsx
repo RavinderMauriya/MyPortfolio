@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
+// NOTE: Replace backup URLs with your actual working backup links
+
 const projects = [
   {
     title: "NexCart",
@@ -18,7 +20,10 @@ const projects = [
       "jwt",
       "Razorpay",
     ],
-    liveUrl: "https://NexCart-project.netlify.app",
+    liveUrls: [
+      "https://nexcart-project.netlify.app",
+      "https://nexcartproject.netlify.app"
+    ],
     githubUrl: "https://github.com/RavinderMauriya/NexCart.git",
     featured: true,
   },
@@ -28,13 +33,23 @@ const projects = [
       "A premium frontend e-commerce UI focused on footwear. Features an advanced filtering system, responsive product grids, and a modern, minimalist design aesthetic.",
     image: "https://ik.imagekit.io/l3qfor1o2/solestyleproject.png",
     tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
-    liveUrl: "https://solestyleproject.netlify.app",
+    liveUrls: [
+      "https://solestyleproject.netlify.app",
+      "https://solestyle-project.netlify.app"
+    ],
     githubUrl: "https://github.com/RavinderMauriya/SoleStyle---Project.git",
     featured: true,
   },
 ];
 
 const Projects = () => {
+  // Function to open the backup URL (user won't know which link opened)
+  const openWorkingLink = (urls) => {
+    if (!urls || urls.length === 0) return;
+    // Open 2nd URL if available (backup), otherwise 1st
+    const urlToOpen = urls[1] || urls[0];
+    window.open(urlToOpen, '_blank', 'noopener,noreferrer');
+  };
   return (
     <section id="projects" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,15 +113,13 @@ const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <a
-                    href={project.liveUrl}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors text-sm"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => openWorkingLink(project.liveUrls)}
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors text-sm cursor-pointer"
                   >
                     <ExternalLink size={16} aria-hidden="true" />
                     Live Demo
-                  </a>
+                  </button>
                   <a
                     href={project.githubUrl}
                     className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-black/5 dark:bg-white/5 text-text-main font-medium hover:bg-black/10 dark:hover:bg-white/10 transition-colors border border-black/10 dark:border-white/10 text-sm"
