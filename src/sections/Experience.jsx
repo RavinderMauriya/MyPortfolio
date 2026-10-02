@@ -3,58 +3,59 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 
 const experienceData = [
   {
-    title: 'Full Stack Web Development Training',
-    company: 'Tech Academy',
-    date: '2025 - Present',
-    description: 'Intensive training covering the complete MERN stack. Developed multiple production-ready applications including comprehensive e-commerce platforms and interactive dashboards. Focus on clean architecture, REST APIs, and state management.',
-    icon: GraduationCap
+    title: 'Web Developer Intern',
+    company: 'ANSH InfoTech',
+    date: 'May 2026 - Aug 2026',
+    description: 'Built and maintained enterprise-level MERN stack applications. Contributed to a core HRMS & Payroll Management System using TypeScript, Prisma ORM, and PostgreSQL. Architected the frontend and backend for a confidential financial assessment application (BI Calculator), building robust React forms with Zod validation and secure Express REST APIs with rate-limiting and input sanitization.',
+    icon: Briefcase
   },
   {
-    title: 'Frontend UI/UX Mastery',
-    company: 'Self-Taught & Bootcamps',
-    date: '2024 - 2025',
-    description: 'Mastered modern CSS frameworks, responsive design principles, and JavaScript fundamentals. Built pixel-perfect UI clones and custom design systems using Tailwind CSS and React.',
-    icon: Briefcase
+    title: 'Academic Web Development Intern',
+    company: 'Edutron Computer Institute',
+    date: 'Academic Internship',
+    description: 'Intensive internship covering HTML, CSS, JavaScript, PHP, MySQL, and Web Hosting. Built foundational web development skills and deployed dynamic applications.',
+    icon: GraduationCap
   }
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 bg-card/30">
+    <section id="experience" className="py-24 relative border-t border-border-subtle">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.4 }}
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience & Training</h2>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto" />
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Experience</h2>
+          <p className="text-text-muted text-lg">My professional journey and training.</p>
         </motion.div>
 
-        <div className="relative border-l-2 border-white/10 ml-3 md:ml-6">
+        <div className="relative border-l border-border-subtle ml-4 md:ml-6 space-y-12">
           {experienceData.map((item, index) => (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="mb-12 relative pl-8 md:pl-12"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="relative pl-8 md:pl-12"
             >
-              <div className="absolute -left-[17px] md:-left-[21px] top-1 bg-card border-2 border-primary w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-primary shadow-[0_0_10px_rgba(59,130,246,0.3)]" aria-hidden="true">
-                <item.icon size={18} />
+              <div className="absolute -left-4 top-1 bg-background border border-border-subtle w-8 h-8 rounded-full flex items-center justify-center text-text-muted" aria-hidden="true">
+                <item.icon size={16} />
               </div>
               
-              <div className="bg-card p-6 md:p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-colors">
-                <span className="text-sm font-medium text-secondary mb-2 block">{item.date}</span>
-                <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                <h4 className="text-text-main/80 font-medium mb-4">{item.company}</h4>
-                <p className="text-text-main/80 leading-relaxed text-sm md:text-base">
-                  {item.description}
-                </p>
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-2">
+                <h3 className="text-xl font-bold tracking-tight">{item.title}</h3>
+                <span className="text-sm font-mono text-accent">{item.date}</span>
               </div>
+              
+              <h4 className="text-text-main font-medium mb-4">{item.company}</h4>
+              <p className="text-text-muted leading-relaxed">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

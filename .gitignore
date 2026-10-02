@@ -27,3 +27,7 @@ dist-ssr
 .env
 DesignDoc.md
 StructureDoc.md
+.claude
+.agents
+resume.md
+skills-lock.json

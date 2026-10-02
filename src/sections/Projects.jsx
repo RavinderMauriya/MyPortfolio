@@ -40,7 +40,24 @@ const projects = [
     githubUrl: "https://github.com/RavinderMauriya/SoleStyle---Project.git",
     featured: true,
   },
+  {
+    title: "BI Rating Calculator",
+    description:
+      "A Business Intelligence Rating platform developed for ऋण Samadhan to assess loan eligibility. Features a multi-step data-driven analysis flow with dynamic net worth to borrowing ratio calculations.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    tags: ["React", "Node.js", "MongoDB", "Express", "Zod", "Tailwind CSS"],
+    featured: false,
+  },
+  {
+    title: "Payroll Management System",
+    description:
+      "A comprehensive web application to streamline business payroll processes. Handles employee management, salaries, attendance tracking, and automated payroll report generation.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop",
+    tags: ["React", "TypeScript", "PostgreSQL", "Prisma", "Express", "Node.js"],
+    featured: false,
+  }
 ];
+
 
 const Projects = () => {
   // Function to open the backup URL (user won't know which link opened)
@@ -113,22 +130,42 @@ const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <button
-                    onClick={() => openWorkingLink(project.liveUrls)}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors text-sm cursor-pointer"
-                  >
-                    <ExternalLink size={16} aria-hidden="true" />
-                    Live Demo
-                  </button>
-                  <a
-                    href={project.githubUrl}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-black/5 dark:bg-white/5 text-text-main font-medium hover:bg-black/10 dark:hover:bg-white/10 transition-colors border border-black/10 dark:border-white/10 text-sm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub size={16} aria-hidden="true" />
-                    Code
-                  </a>
+                  {project.liveUrls && project.liveUrls.length > 0 ? (
+                    <button
+                      onClick={() => openWorkingLink(project.liveUrls)}
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-background font-medium hover:opacity-90 transition-opacity text-sm cursor-pointer"
+                    >
+                      <ExternalLink size={16} aria-hidden="true" />
+                      Live Demo
+                    </button>
+                  ) : (
+                    <button
+                      disabled
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-black/5 dark:bg-white/5 text-text-main font-medium border border-black/10 dark:border-white/10 text-sm cursor-not-allowed opacity-60"
+                    >
+                      <ExternalLink size={16} aria-hidden="true" />
+                      Internal App
+                    </button>
+                  )}
+
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-black/5 dark:bg-white/5 text-text-main font-medium hover:bg-black/10 dark:hover:bg-white/10 transition-colors border border-black/10 dark:border-white/10 text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaGithub size={16} aria-hidden="true" />
+                      Code
+                    </a>
+                  ) : (
+                    <button
+                      disabled
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-black/5 dark:bg-white/5 text-text-main font-medium border border-black/10 dark:border-white/10 text-sm cursor-not-allowed opacity-60"
+                    >
+                      🔒 Confidential
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -1,56 +1,98 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const skillsData = [
   {
-    category: 'Frontend',
-    skills: ['React.js', 'Tailwind CSS', 'Framer Motion', 'HTML5', 'CSS3', 'JavaScript (ES6+)']
+    category: "Frontend",
+    skills: [
+      "React.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+    ],
   },
   {
-    category: 'Backend',
-    skills: ['Node.js', 'Express.js', 'RESTful APIs', 'Authentication (JWT)', 'API Design']
+    category: "Backend",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "RESTful APIs",
+      "Authentication (JWT)",
+      "API Design",
+    ],
   },
   {
-    category: 'Database',
-    skills: ['MongoDB', 'Mongoose', 'Data Modeling', 'Aggregation Pipeline']
+    category: "Database",
+    skills: [
+      "MongoDB",
+      "Redis",
+      "Prisma",
+      "Supabase",
+      "Data Modeling",
+      "Aggregation Pipeline",
+    ],
   },
   {
-    category: 'Tools & Other',
-    skills: ['Git & GitHub', 'Vite', 'Postman', 'Vercel', 'Render', 'Responsive Design']
-  }
+    category: "Deployment",
+    skills: [
+      "Netlify",
+      "Render",
+      "Vercel",
+      "Docker",
+    ],
+  },
+  {
+    category: "Tools & Other",
+    skills: [
+      "Git & GitHub",
+      "Postman",
+      "Gen AI Integration",
+      "Responsive Design",
+    ],
+  },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-card/30">
+    <section id="skills" className="py-24 border-t border-border-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.4 }}
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto" />
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
+            Technical Arsenal
+          </h2>
+          <p className="text-text-muted max-w-2xl text-lg font-medium">Tools and technologies I use to build digital products.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8">
           {skillsData.map((group, index) => (
             <motion.div
               key={group.category}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card p-6 rounded-2xl border border-white/5 hover:border-secondary/30 transition-all group"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="flex flex-col"
             >
-              <h3 className="text-xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary inline-block">
+              <h3 className="text-sm font-mono uppercase tracking-widest text-text-muted mb-6 border-b border-border-subtle pb-2">
                 {group.category}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {group.skills.map((skill) => (
-                  <li key={skill} className="flex items-center text-text-main/90 group-hover:text-text-main transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent mr-3" aria-hidden="true" />
+                  <li
+                    key={skill}
+                    className="flex items-center text-text-main font-medium"
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-sm bg-accent/50 mr-3"
+                      aria-hidden="true"
+                    />
                     {skill}
                   </li>
                 ))}

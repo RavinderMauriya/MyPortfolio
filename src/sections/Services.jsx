@@ -10,7 +10,7 @@ const services = [
   {
     icon: Code,
     title: 'Frontend Excellence',
-    description: 'Creating highly interactive, fast, and accessible user interfaces using modern React features, Tailwind CSS, and Framer Motion.'
+    description: 'Creating highly interactive, fast, and accessible user interfaces using modern React features and styling.'
   },
   {
     icon: ShoppingBag,
@@ -20,45 +20,46 @@ const services = [
   {
     icon: Palette,
     title: 'UI/UX Implementation',
-    description: 'Translating high-fidelity Figma designs into pixel-perfect, responsive code that looks great on any device.'
+    description: 'Translating high-fidelity designs into pixel-perfect, responsive code that looks great on any device.'
   }
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-24 relative border-t border-border-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center"
+          transition={{ duration: 0.4 }}
+          className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Services</h2>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto" />
-          <p className="mt-6 text-text-main/70 max-w-2xl mx-auto text-lg">
-            What I bring to the table. Specialized services to help your business grow.
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Services</h2>
+          <p className="text-text-muted max-w-2xl text-lg font-medium">
+            Specialized expertise to help your product grow.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 bg-card rounded-2xl border border-white/5 hover:bg-card/80 hover:border-secondary/30 transition-all group"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="flex gap-6 group"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300" aria-hidden="true">
-                <service.icon size={28} />
+              <div className="shrink-0 text-text-muted group-hover:text-primary transition-colors duration-300 mt-1" aria-hidden="true">
+                <service.icon size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-text-main/80 text-sm leading-relaxed">
-                {service.description}
-              </p>
+              <div>
+                <h3 className="text-xl font-bold mb-3 tracking-tight">{service.title}</h3>
+                <p className="text-text-muted text-base leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

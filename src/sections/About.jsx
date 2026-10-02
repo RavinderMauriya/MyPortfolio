@@ -3,40 +3,40 @@ import { Code2, Layout, Database, Server } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-24 relative border-t border-border-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-primary rounded-full" />
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">About</h2>
+          <p className="text-text-muted max-w-2xl text-lg font-medium">Building the bridge between design and engineering.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <p className="text-lg text-text-main/80 leading-relaxed mb-6">
-              I am a passionate <span className="text-primary font-semibold">Full Stack MERN Developer</span> dedicated to building scalable, high-performance web applications. My expertise spans across the entire stack, from designing intuitive user interfaces to architecting robust backend systems.
+            <p className="text-lg text-text-muted leading-relaxed mb-6">
+              I am a <strong className="text-text-main font-semibold">Full Stack Developer</strong> dedicated to building scalable, high-performance web applications. My expertise spans across the entire stack, from designing intuitive user interfaces to architecting robust backend systems.
             </p>
-            <p className="text-lg text-text-main/80 leading-relaxed">
-              With a strong focus on <span className="text-secondary font-semibold">modern UI/UX principles</span>, I don't just write code—I craft digital experiences. I believe that great software is the perfect balance of technical precision and aesthetic appeal.
+            <p className="text-lg text-text-muted leading-relaxed">
+              With a strong focus on <strong className="text-text-main font-semibold">modern UI/UX principles</strong>, I don't just write code—I craft digital experiences. I believe that great software is the perfect balance of technical precision and aesthetic appeal.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4"
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="grid grid-cols-2 gap-x-8 gap-y-10"
           >
             {[
               { icon: Layout, title: 'Frontend', desc: 'React, Tailwind' },
@@ -44,10 +44,10 @@ const About = () => {
               { icon: Database, title: 'Database', desc: 'MongoDB' },
               { icon: Code2, title: 'Clean Code', desc: 'Best Practices' },
             ].map((item, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-card border border-white/5 hover:border-primary/30 transition-colors">
-                <item.icon className="text-primary mb-4" size={32} aria-hidden="true" />
-                <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                <p className="text-text-main/80 text-sm">{item.desc}</p>
+              <div key={index} className="flex flex-col group">
+                <item.icon className="text-text-muted mb-4 group-hover:text-primary transition-colors" size={28} aria-hidden="true" />
+                <h3 className="font-bold text-lg mb-1 tracking-tight">{item.title}</h3>
+                <p className="text-text-muted text-sm font-mono">{item.desc}</p>
               </div>
             ))}
           </motion.div>

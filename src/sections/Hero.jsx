@@ -1,87 +1,66 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Mail } from 'lucide-react';
-import Antigravity from '../components/Antigravity';
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Antigravity 3D Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <Antigravity
-          count={150}
-          magnetRadius={5}
-          ringRadius={6}
-          waveSpeed={0.15}
-          waveAmplitude={0.3}
-          particleSize={0.7}
-          lerpSpeed={0.02}
-          autoAnimate={true}
-          particleVariance={0.3}
-          rotationSpeed={0.01}
-          depthFactor={0.8}
-          pulseSpeed={1}
-          particleShape="capsule"
-          fieldStrength={20}
-        />
-      </div>
-      {/* Mobile overlay to reduce distraction */}
-      <div className="absolute inset-0 bg-background/40 sm:bg-transparent pointer-events-none" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         >
-          <span className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+          <span className="inline-block py-1.5 px-3 rounded-full bg-border-subtle/50 text-text-muted text-xs font-mono mb-8 border border-border-subtle">
+            <span className="inline-block w-2 h-2 rounded-full bg-accent mr-2 animate-pulse" />
             Available for new opportunities
           </span>
         </motion.div>
 
         <motion.h1 
-          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 text-primary leading-none"
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
         >
-          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Ravinder Mauriya</span>
+          Ravinder Mauriya
         </motion.h1>
 
-        <motion.p 
-          className="mt-4 text-xl md:text-2xl text-text-main/80 max-w-3xl mx-auto font-light leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
+        <motion.h2 
+          className="text-2xl md:text-4xl text-text-muted max-w-3xl font-medium tracking-tight mb-8"
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
-          Full Stack MERN Developer building scalable, end-to-end web applications with modern UI/UX.
-        </motion.p>
+          Software Engineer specializing in the MERN stack.
+          <br className="hidden md:block" /> I build secure, scalable web applications and enterprise tools.
+        </motion.h2>
         
         <motion.p
-          className="mt-4 text-lg text-text-main/60"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-lg text-text-muted/80 max-w-2xl mb-12 font-mono text-sm leading-relaxed"
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
-          From idea to production — I handle everything.
+          From initial concept to scalable production — I handle the entire stack with a focus on modern UI/UX and clean architecture.
         </motion.p>
 
         <motion.div 
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-          initial={{ opacity: 0, y: 20 }}
+          className="flex flex-col sm:flex-row gap-4"
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
         >
-          <a href="#projects" className="group px-8 py-3.5 rounded-lg bg-primary text-white font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+          <a href="#projects" className="group px-8 py-4 rounded bg-primary text-background font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
             View Projects
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </a>
-          <a href="/resume.pdf" target="_blank" className="px-8 py-3.5 rounded-lg bg-card border border-white/10 text-text-main font-medium flex items-center justify-center gap-2 hover:bg-white/5 transition-all">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded border border-border-subtle text-text-main font-medium flex items-center justify-center gap-2 hover:bg-border-subtle/30 transition-all">
             <Download size={18} aria-hidden="true" />
-            Download Resume
+            Resume
           </a>
-          <a href="#contact" className="px-8 py-3.5 rounded-lg bg-transparent border border-white/10 text-text-main font-medium flex items-center justify-center gap-2 hover:border-primary/50 hover:text-primary transition-all">
+          <a href="#contact" className="px-8 py-4 rounded text-text-muted font-medium flex items-center justify-center gap-2 hover:text-primary transition-all">
             <Mail size={18} aria-hidden="true" />
-            Hire Me
+            Contact
           </a>
         </motion.div>
       </div>

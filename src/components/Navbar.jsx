@@ -45,18 +45,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-background/80 border-b border-black/5 dark:border-white/5 shadow-sm' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-background/80 border-b border-border-subtle shadow-sm' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <a href="#" className="text-xl font-bold font-mono text-primary tracking-tight">
               ravinder.dev
             </a>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-text-main/80 hover:text-primary transition-colors text-sm font-medium">
+              <a key={link.name} href={link.href} className="text-text-muted hover:text-primary transition-colors text-sm font-medium">
                 {link.name}
               </a>
             ))}
@@ -66,10 +66,10 @@ const Navbar = () => {
               className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-main"
               aria-label="Toggle Theme"
             >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
-            <a href="#contact" className="px-5 py-2.5 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20 transition-all font-medium text-sm">
+            <a href="#contact" className="px-5 py-2 rounded bg-accent text-white hover:bg-accent/90 transition-all font-medium text-sm shadow-sm">
               Hire Me
             </a>
           </div>
@@ -80,7 +80,7 @@ const Navbar = () => {
               className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-main"
               aria-label="Toggle Theme"
             >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
 
             <button 
@@ -100,15 +100,15 @@ const Navbar = () => {
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-card/95 backdrop-blur-lg border-b border-black/5 dark:border-white/5"
+          className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border-subtle"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-4 pt-2 pb-6 space-y-1">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-text-main hover:text-primary hover:bg-black/5 dark:hover:bg-white/5"
+                className="block px-3 py-3 rounded-md text-base font-medium text-text-main hover:text-primary hover:bg-black/5 dark:hover:bg-white/5"
               >
                 {link.name}
               </a>
@@ -116,7 +116,7 @@ const Navbar = () => {
             <a 
               href="#contact" 
               onClick={() => setIsOpen(false)}
-              className="block mt-4 text-center px-5 py-3 rounded-lg bg-primary text-white font-medium"
+              className="block mt-4 text-center px-5 py-3 rounded bg-accent text-white font-medium shadow-sm"
             >
               Hire Me
             </a>

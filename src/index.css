@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -7,26 +8,33 @@
   --color-secondary: var(--secondary-color);
   --color-accent: var(--accent-color);
   --color-text-main: var(--text-color);
+  --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border-subtle);
 
   --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 :root {
-  --bg-color: #F8FAFC;
+  --bg-color: #FAFAFA;
   --card-color: #FFFFFF;
-  --primary-color: #2563EB;
-  --secondary-color: #7C3AED;
-  --accent-color: #16A34A;
+  --primary-color: #0F172A;
+  --secondary-color: #334155;
+  --accent-color: #10B981;
   --text-color: #0F172A;
+  --text-muted: #64748B;
+  --border-subtle: #E2E8F0;
 }
 
 .dark {
   --bg-color: #0B0F19;
   --card-color: #111827;
-  --primary-color: #3B82F6;
-  --secondary-color: #8B5CF6;
-  --accent-color: #22C55E;
-  --text-color: #E5E7EB;
+  --primary-color: #F8FAFC;
+  --secondary-color: #CBD5E1;
+  --accent-color: #10B981;
+  --text-color: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border-subtle: #1E293B;
 }
 
 @layer base {
