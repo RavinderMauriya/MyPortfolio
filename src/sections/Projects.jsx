@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import resumeScoreImg from "../assets/resume-score.png";
 
 // NOTE: Replace backup URLs with your actual working backup links
 
