@@ -1,10 +1,34 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import resumeScoreImg from "../assets/resume-score.png";
 
 // NOTE: Replace backup URLs with your actual working backup links
 
 const projects = [
+  {
+    title: "ResumeScore",
+    description:
+      "An AI-powered resume review and ATS scoring platform that analyzes PDF resumes against job descriptions. Engineered with asynchronous BullMQ/Redis worker queues, Google Gemini AI, in-memory PDF extraction, OTP authentication, and an interactive analytics dashboard.",
+    image: "https://ik.imagekit.io/l3qfor1o2/Screenshot%202026-10-10%20124541.png",
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "Gen AI",
+      "Tailwind CSS",
+      "Docker",
+    ],
+    liveUrls: [
+      "https://resume-score-one.vercel.app"
+    ],
+    githubUrl: "https://github.com/RavinderMauriya/resume-score.git",
+    featured: true,
+  },
   {
     title: "NexCart",
     description:
